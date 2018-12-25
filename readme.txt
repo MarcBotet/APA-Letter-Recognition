@@ -1,6 +1,6 @@
 Machine Learning in Facultat d'Informàtica de Barcelona.
 
-Grade: 10
+Grade: 9.5
 
 Authors:
 
