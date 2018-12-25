@@ -1,0 +1,67 @@
+\section{Model òptim}
+Un cop vistos tots els models es pot veure un resum en aquesta taula.
+\begin{table}[H]
+	\centering
+	\def\arraystretch{1.4}
+	\begin{tabular}{|l|l|rr|}
+		\cline{2-4}
+		\multicolumn{1}{c|}{}
+		& Mètode & Error entrenament & Error validació \\
+		\hline
+		\multirow{4}{*}{Lineals}
+		& QDA & 88.45 \% & 88.47 \% \\
+		& LDA & 70.19 i \% & 70.19 \% \\
+		& KNN & 95.41 \% & 95.41 \% \\
+		& SVM Quadràtic & 95.63 \% & 95.85 \% \\
+		\hline
+		\multirow{2}{*}{No Lineals}
+		& \textbf{SVM Radia}l & \textbf{96.80} \% & \textbf{97.54} \% \\
+		& Random Forest & 96.10\% & 96.27\% \\
+		& Xarxes neuronals &  95.67\% &  95.32\% \\
+		\hline
+	\end{tabular}
+	\caption{Mètode utilitzat i precisió i validació obtinguts per a la predicció de lletras.}
+	\label{tab:metode_si_no}
+\end{table}
+
+Com es possible observar a la taula \ref{tab:metode_si_no} el model que dóna millors resultats tant en precisió d'entrenament com precisió de validació és \textit{SVM Radial} amb un 97.54, un resultat excel·lent. En la taula~\ref{mcfinal} es pot observar la matriu de confusió la qual, gràcies al alt percentatge d'encert del nostre model la majoria de números estan a la diagonal.
+
+\begin{table}[ht]
+\centering
+\begin{adjustbox}{max width=\textwidth}
+\begin{tabular}{rrrrrrrrrrrrrrrrrrrrrrrrrrr}
+  \hline
+ & A & B & C & D & E & F & G & H & I & J & K & L & M & N & O & P & Q & R & S & T & U & V & W & X & Y & Z \\ 
+  \hline
+A & 235 &   0 &   0 &   0 &   0 &   0 &   0 &   0 &   0 &   0 &   0 &   0 &   0 &   0 &   0 &   0 &   0 &   0 &   0 &   0 &   0 &   0 &   0 &   0 &   0 &   0 \\ 
+  B &   0 & 221 &   0 &   0 &   3 &   1 &   0 &   1 &   1 &   0 &   1 &   1 &   0 &   0 &   0 &   1 &   0 &   2 &   1 &   0 &   0 &   2 &   0 &   0 &   0 &   0 \\ 
+  C &   0 &   0 & 215 &   0 &   2 &   0 &   2 &   1 &   0 &   0 &   0 &   0 &   0 &   0 &   1 &   0 &   1 &   0 &   0 &   0 &   0 &   0 &   0 &   0 &   0 &   0 \\ 
+  D &   0 &   0 &   0 & 239 &   0 &   0 &   1 &   7 &   0 &   1 &   0 &   0 &   0 &   3 &   0 &   0 &   0 &   1 &   0 &   0 &   0 &   0 &   0 &   1 &   0 &   0 \\ 
+  E &   0 &   0 &   2 &   0 & 218 &   1 &   2 &   0 &   0 &   0 &   0 &   0 &   0 &   0 &   0 &   1 &   0 &   1 &   0 &   0 &   0 &   0 &   0 &   1 &   0 &   1 \\ 
+  F &   0 &   0 &   0 &   0 &   0 & 227 &   0 &   0 &   0 &   0 &   0 &   0 &   0 &   0 &   0 &   5 &   0 &   0 &   0 &   0 &   0 &   1 &   0 &   2 &   0 &   0 \\ 
+  G &   0 &   0 &   2 &   0 &   1 &   0 & 225 &   1 &   0 &   0 &   0 &   0 &   0 &   0 &   1 &   0 &   1 &   0 &   0 &   0 &   0 &   0 &   0 &   0 &   0 &   0 \\ 
+  H &   0 &   1 &   0 &   0 &   0 &   0 &   0 & 202 &   0 &   1 &   1 &   1 &   0 &   0 &   0 &   1 &   0 &   0 &   0 &   0 &   2 &   0 &   0 &   0 &   0 &   0 \\ 
+  I &   0 &   0 &   0 &   0 &   0 &   0 &   0 &   0 & 220 &   7 &   0 &   0 &   0 &   0 &   0 &   0 &   0 &   0 &   0 &   0 &   0 &   0 &   0 &   0 &   0 &   0 \\ 
+  J &   0 &   0 &   0 &   0 &   0 &   0 &   0 &   0 &   3 & 214 &   0 &   0 &   0 &   0 &   0 &   0 &   0 &   1 &   0 &   0 &   0 &   0 &   0 &   0 &   0 &   0 \\ 
+  K &   0 &   1 &   0 &   0 &   1 &   0 &   0 &   4 &   0 &   0 & 215 &   0 &   0 &   0 &   0 &   0 &   0 &   4 &   0 &   1 &   0 &   0 &   0 &   2 &   0 &   0 \\ 
+  L &   0 &   0 &   0 &   0 &   2 &   0 &   0 &   0 &   0 &   0 &   0 & 224 &   0 &   0 &   0 &   0 &   0 &   0 &   0 &   0 &   0 &   0 &   0 &   0 &   0 &   0 \\ 
+  M &   0 &   1 &   0 &   0 &   0 &   0 &   0 &   0 &   0 &   0 &   0 &   0 & 236 &   0 &   0 &   0 &   0 &   0 &   0 &   0 &   2 &   1 &   1 &   0 &   0 &   0 \\ 
+  N &   0 &   0 &   0 &   1 &   0 &   0 &   0 &   0 &   0 &   0 &   0 &   0 &   0 & 228 &   1 &   0 &   0 &   4 &   0 &   0 &   1 &   0 &   0 &   0 &   0 &   0 \\ 
+  O &   0 &   0 &   1 &   1 &   0 &   0 &   0 &   1 &   0 &   0 &   0 &   0 &   0 &   0 & 219 &   0 &   0 &   0 &   0 &   0 &   0 &   0 &   0 &   0 &   0 &   0 \\ 
+  P &   0 &   0 &   0 &   0 &   0 &   1 &   0 &   0 &   1 &   0 &   0 &   0 &   0 &   0 &   0 & 232 &   2 &   0 &   0 &   1 &   0 &   0 &   0 &   0 &   0 &   0 \\ 
+  Q &   0 &   0 &   0 &   0 &   0 &   0 &   0 &   1 &   0 &   0 &   0 &   0 &   0 &   0 &   1 &   0 & 230 &   0 &   0 &   0 &   0 &   0 &   0 &   0 &   0 &   0 \\ 
+  R &   0 &   2 &   0 &   0 &   0 &   0 &   0 &   2 &   0 &   0 &   3 &   1 &   0 &   2 &   0 &   0 &   0 & 214 &   0 &   0 &   0 &   0 &   0 &   0 &   0 &   1 \\ 
+  S &   0 &   0 &   0 &   0 &   2 &   1 &   0 &   0 &   0 &   0 &   0 &   1 &   0 &   0 &   0 &   0 &   0 &   0 & 223 &   0 &   0 &   0 &   0 &   0 &   0 &   1 \\ 
+  T &   0 &   0 &   0 &   0 &   0 &   0 &   0 &   0 &   0 &   0 &   0 &   0 &   0 &   0 &   0 &   0 &   0 &   0 &   0 & 235 &   0 &   0 &   0 &   0 &   1 &   0 \\ 
+  U &   0 &   0 &   0 &   0 &   0 &   0 &   0 &   0 &   0 &   0 &   0 &   0 &   1 &   0 &   1 &   0 &   0 &   0 &   0 &   0 & 238 &   0 &   0 &   0 &   0 &   0 \\ 
+  V &   0 &   3 &   0 &   0 &   0 &   1 &   1 &   0 &   0 &   0 &   0 &   0 &   0 &   1 &   0 &   0 &   0 &   0 &   0 &   0 &   0 & 223 &   0 &   0 &   0 &   0 \\ 
+  W &   0 &   0 &   0 &   0 &   0 &   0 &   0 &   0 &   0 &   0 &   0 &   0 &   0 &   0 &   1 &   0 &   0 &   0 &   0 &   0 &   0 &   0 & 224 &   0 &   0 &   0 \\ 
+  X &   0 &   0 &   0 &   0 &   0 &   0 &   0 &   0 &   1 &   1 &   1 &   0 &   0 &   0 &   0 &   0 &   0 &   0 &   0 &   0 &   0 &   0 &   0 & 230 &   0 &   0 \\ 
+  Y &   1 &   0 &   0 &   0 &   0 &   0 &   0 &   0 &   0 &   0 &   0 &   0 &   0 &   0 &   0 &   0 &   0 &   0 &   0 &   1 &   0 &   2 &   0 &   0 & 234 &   0 \\ 
+  Z &   0 &   0 &   0 &   0 &   1 &   0 &   0 &   0 &   0 &   0 &   0 &   0 &   0 &   0 &   0 &   0 &   0 &   0 &   0 &   0 &   0 &   0 &   0 &   0 &   0 & 217 \\ 
+   \hline
+\end{tabular}
+\end{adjustbox}
+\caption{Matriu de confusió del conjunt de dades de prova predit pel model SVM RBF}
+\label{mcfinal}
+\end{table}

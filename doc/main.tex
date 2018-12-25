@@ -1,0 +1,123 @@
+\documentclass[a4paper]{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%       BASIC PACKAGES      %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{wrapfig}
+\usepackage{graphics}
+\usepackage{hyperref}
+\usepackage{import}
+\usepackage[backend=biber]{biblatex}
+\usepackage{scrextend}
+\usepackage[toc,page]{appendix}
+\usepackage{minted}
+\usepackage{rotating}
+\usepackage{adjustbox}
+\usepackage{amsmath,xfrac}
+\usepackage{todonotes}
+\usepackage{float}
+\usepackage{algpseudocode}
+\usepackage{fancyvrb}
+\usepackage{subcaption}
+\usepackage{longtable}
+\usepackage{multirow}
+\usepackage{adjustbox}
+\usepackage{booktabs}
+\usepackage{etoolbox}
+\usepackage{listings}
+\usepackage{lipsum}
+%HYPERLINKS
+\usepackage{multicol}\usepackage{biblatex}
+\usepackage{url}
+\usepackage{xcolor}
+\usepackage{colortbl}
+\usepackage{adjustbox}
+\usepackage[catalan]{babel}
+\usepackage{fancyvrb}
+\hypersetup{
+    colorlinks,
+    linkcolor={black!50!black},
+    citecolor={black!50!black},
+    urlcolor={blue!80!black}
+}
+
+%-------------------------------------------------------%
+% This configures the top margin and the paragraph skip %
+%-------------------------------------------------------%
+\usepackage{geometry}
+
+\geometry{
+    top=10em
+}
+
+\setlength{\parskip}{1em}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%      BIBLIOGRAFIA       %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\addbibresource{references.bib}
+
+
+
+\begin{document}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%         TITLE PAGE        %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{titlepage}
+	\centering
+	{\scshape\LARGE Universitat Politècnica de Catalunya \par}
+	\vspace{1cm}
+	{\scshape\Large Aprenentatge Automàtic\par}
+	\vspace{1.5cm}
+	{\huge\bfseries Reconeixement de lletres
+    \par}
+	\vspace{2cm}
+	{\Large\itshape Botet Colomer, Marc\par}
+	{\Large\itshape González Sequeira, Enrique Alexandre\par}
+	\vspace{1cm}
+% Bottom of the page
+	{\large 17 de gener 2018\par}
+	\includegraphics[scale=0.5]{img/logo-vector-universitat-politecnica-catalunya.jpg}\par\vspace{1cm}
+\end{titlepage}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%       CONTENTS PAGE       %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newenvironment{contents}
+    {}
+    {}
+    
+\setcounter{tocdepth}{2} 
+\begin{contents}
+    \tableofcontents
+    \clearpage
+\end{contents}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%       SECTIONS PAGE       %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%% Configure a directory location for sections
+\newcommand*{\sectiondir}{sections/}
+
+\import{\sectiondir}{introduccio.tex}
+\import{\sectiondir}{related.tex}
+\import{\sectiondir}{prepross.tex}
+\import{\sectiondir}{predictions.tex}
+\import{\sectiondir}{nonLinears.tex}
+\import{\sectiondir}{comparacio.tex}
+\import{\sectiondir}{conclusions.tex}
+
+\printbibliography
+
+
+\end{document}

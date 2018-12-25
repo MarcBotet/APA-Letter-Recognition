@@ -1,0 +1,7 @@
+\section{Introducció}
+L'objectiu d'aquest treball és reconèixer lletres a partir d'una sèrie de característiques. Per a dur a terme aquesta tasca tenim un conjunt de dades\cite{datasetLetter} amb vint mil exemples que inclou quina lletra és i 16 característiques per descriure tal lletra.
+
+En primer lloc s'analitzarà el conjunt de dades per tal de saber la nostra distribució de les dades i poder comprovar que no hi hagi valors anormals o faltants, solucionant tals problemes si és necessari. També s'explicarà com s'han dividit les dades i quin criteri s'ha usat per avaluar els models i triar els \textit{hiper-paràmetres} de cada model
+
+Un cop estigui preparat els conjunt de dades s'intentarà predir, amb la màxima precisió possible, quina lletra correspon cada un dels exemples del conjunt de dades de prova. S'usarà diferents enfocaments per tal d'analitzar quin funciona millor. Primerament es provarà models lineals o quadràtics: QDA, LDA, SVM quadràtic. Seguidament es provarà els models no lineals: SVM amb RBF Kernel, Random Forest i xarxes neuronals amb una capa oculta. Finalment, es compararà tots els models i es triarà el model definitiu pel nostre.
+
